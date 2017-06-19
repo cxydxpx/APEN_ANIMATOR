@@ -6,6 +6,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,11 +24,18 @@ public class MainActivity extends AppCompatActivity {
         iv = (ImageView) findViewById(R.id.iv);
     }
 
+    public void next(View v) {
+      startActivity(new Intent(this,AnimationActivity.class));
+    }
+
+
     public void alpha(View v) {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(iv, "alpha", 1f, 0f, 1f);
         objectAnimator.setDuration(2000);
         objectAnimator.start();
     }
+
+
 
 
     public void rotation(View v) {
